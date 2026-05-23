@@ -206,7 +206,7 @@ export async function pdfToImages(
  */
 export async function compressPDF(
   file: File,
-  compressionLevel: 'low' | 'medium' | 'high', // High compression = smaller output size / lower quality
+  compressionLevel: 'low' | 'medium' | 'high' | 'extreme', // High compression = smaller output size / lower quality
   onProgress?: (percent: number) => void
 ): Promise<Uint8Array> {
   const fileBuffer = await fileToArrayBuffer(file);
@@ -226,6 +226,9 @@ export async function compressPDF(
   } else if (compressionLevel === 'high') {
     scale = 0.85;
     quality = 0.45;
+  } else if (compressionLevel === 'extreme') {
+    scale = 0.6;
+    quality = 0.25;
   }
 
   for (let pageNum = 1; pageNum <= numPages; pageNum++) {

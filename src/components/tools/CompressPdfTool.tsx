@@ -23,6 +23,7 @@ export default function CompressPdfTool() {
       { id: 'low', label: 'Low Compression', desc: 'High resolution, minimal size reduction' },
       { id: 'medium', label: 'Medium Compression', desc: 'Balanced resolution and size (Recommended)' },
       { id: 'high', label: 'High Compression', desc: 'Lower resolution, maximum size reduction' },
+      { id: 'extreme', label: 'Extreme Compression', desc: 'Lowest resolution, maximum possible size reduction' },
     ];
 
     return (
@@ -30,7 +31,7 @@ export default function CompressPdfTool() {
         <label className="block text-xs font-bold uppercase tracking-wider text-muted-foreground">
           Compression Level
         </label>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
           {levels.map((level) => {
             const isSelected = options.level === level.id;
             return (
@@ -61,7 +62,7 @@ export default function CompressPdfTool() {
       accept=".pdf"
       multiple={false}
       maxFilesLimitFree={1}
-      maxSizeLimitMBFree={15}
+      maxSizeLimitMBFree={150}
       processFiles={handleProcess}
       optionsPanel={renderOptions}
       initialOptions={{ level: 'medium' }}

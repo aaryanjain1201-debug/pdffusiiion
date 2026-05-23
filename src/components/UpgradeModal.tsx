@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Check, Sparkles, Loader2 } from 'lucide-react';
 import confetti from 'canvas-confetti';
+import { MONETIZATION_CONFIG } from '@/lib/monetization-config';
 
 interface UpgradeModalProps {
   isOpen: boolean;
@@ -22,6 +23,12 @@ export default function UpgradeModal({ isOpen, onClose }: UpgradeModalProps) {
   }, [isOpen]);
 
   const handleUpgrade = () => {
+    if (MONETIZATION_CONFIG.stripePaymentLink && !MONETIZATION_CONFIG.stripePaymentLink.includes('mock_payment_link')) {
+      // Redirect to real Stripe Payment page
+      window.location.href = MONETIZATION_CONFIG.stripePaymentLink;
+      return;
+    }
+
     setLoading(true);
     // Simulate transaction delay
     setTimeout(() => {

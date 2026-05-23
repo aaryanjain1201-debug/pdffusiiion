@@ -1,37 +1,14 @@
-import { Shield, PenTool, Layout, Laptop } from 'lucide-react';
-
-interface AffiliateProduct {
-  name: string;
-  desc: string;
-  url: string;
-  badge: string;
-  icon: React.ReactNode;
-}
+import { Shield, PenTool, Layout } from 'lucide-react';
+import { MONETIZATION_CONFIG } from '@/lib/monetization-config';
 
 export default function AffiliateSection() {
-  const products: AffiliateProduct[] = [
-    {
-      name: 'NordVPN Privacy Shield',
-      desc: 'Secure your internet connection and protect your files while browsing. Get up to 60% off.',
-      url: 'https://nordvpn.com',
-      badge: 'Highly Recommended',
-      icon: <Shield className="h-6 w-6 text-indigo-500" />,
-    },
-    {
-      name: 'Canva Design Studio',
-      desc: 'Create beautiful presentations, graphics, and images, and import them directly to PDF.',
-      url: 'https://canva.com',
-      badge: 'Free Trial',
-      icon: <Layout className="h-6 w-6 text-pink-500" />,
-    },
-    {
-      name: 'Adobe Acrobat Pro',
-      desc: 'Unlock industry-grade desktop PDF edit and signature workflows. Perfect for large teams.',
-      url: 'https://adobe.com',
-      badge: 'Best Desktop Tool',
-      icon: <PenTool className="h-6 w-6 text-red-500" />,
-    },
-  ];
+  const getIcon = (name: string) => {
+    if (name.includes('NordVPN')) return <Shield className="h-6 w-6 text-indigo-500" />;
+    if (name.includes('Canva')) return <Layout className="h-6 w-6 text-pink-500" />;
+    return <PenTool className="h-6 w-6 text-red-500" />;
+  };
+
+  const products = MONETIZATION_CONFIG.affiliates;
 
   return (
     <section className="my-16 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -58,7 +35,7 @@ export default function AffiliateSection() {
             </div>
 
             <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-secondary mb-4 group-hover:scale-110 transition-transform duration-300">
-              {prod.icon}
+              {getIcon(prod.name)}
             </div>
 
             <h3 className="text-lg font-bold tracking-tight text-foreground group-hover:text-primary transition-colors">
