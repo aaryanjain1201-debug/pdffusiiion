@@ -258,4 +258,134 @@ When you use local tools:
 By using local Web API technology, you get maximum speed, zero data limits, and complete security!
     `,
   },
+  {
+    slug: 'pdf-to-jpg-under-100kb',
+    title: 'How to Convert PDF to JPG Under 100KB Online',
+    excerpt: 'A complete guide to converting PDF pages to JPEG images and compressing them below 100KB for government portals and job applications.',
+    date: 'May 23, 2026',
+    readTime: '4 min read',
+    category: 'Guides',
+    content: `
+# How to Convert PDF to JPG Under 100KB Online
+
+Many official government portals, employment websites, and university application forms require you to upload your documents (such as marksheets, degrees, or ID proofs) as JPEG/JPG images. Moreover, they enforce strict file size constraints, often requiring the final image to be **under 100KB**.
+
+Uploading high-resolution PDFs directly usually results in file sizes of 500KB to 2MB, which are rejected by these servers. In this tutorial, we will show you how to convert and shrink your PDF pages down to under 100KB JPEGs completely offline in your browser.
+
+---
+
+## 1. The 100KB File Size Problem
+
+To make an image smaller than 100KB, you must control two parameters during conversion:
+1. **DPI (Resolution)**: A lower pixel resolution reduces the count of data points.
+2. **JPEG Compression Quality**: Adjusting the compression ratio compresses block artifacts.
+
+Cloud-based conversion sites do not let you configure these values, giving you bloated images. By using client-side tools, you can control the canvas scaling directly inside your browser cache.
+
+---
+
+## 2. Step-by-Step Guide on PDFFusion
+
+You can achieve this in two steps using PDFFusion's local conversion tools:
+
+### Step A: Extract PDF Pages as JPEGs
+1. Go to the [PDF to Image](/tools/pdf-to-image) tool on PDFFusion.
+2. Select your PDF document.
+3. Click **Process Document** to let the browser draw pages onto optimized canvases.
+4. Download the extracted JPEG files.
+
+### Step B: Apply High Compression (If the file exceeds 100KB)
+If your extracted image is still above 100KB (e.g. 150KB), you can compress it:
+1. Navigate to the [Compress PDF](/tools/compress-pdf) tool.
+2. Set the compression level to **Extreme Compression**.
+3. Re-process to scale down the image layers to 0.6x resolution.
+4. Download your perfect, ultra-lightweight document.
+
+---
+
+## 3. Security Benefits of Client-Side Processing
+
+When applying for government jobs or scholarships, your documents contain highly personal details (Aadhaar cards, PAN numbers, birth certificates, signatures). 
+
+Using **PDFFusion** guarantees that:
+- **No data leaves your computer**: The file conversion happens inside your RAM.
+- **Compliance guaranteed**: Eliminates the risk of identity theft since your files are never saved on third-party cloud servers.
+    `,
+  },
+  {
+    slug: 'merge-pdf-on-mobile-without-apps',
+    title: 'How to Merge PDF Files on Mobile (Android & iPhone) Without Apps',
+    excerpt: 'Combine multiple PDF documents directly inside your mobile Safari or Chrome browser. Fast, 100% private, and uses zero data.',
+    date: 'May 23, 2026',
+    readTime: '3 min read',
+    category: 'Tutorials',
+    content: `
+# How to Merge PDF Files on Mobile (Android & iPhone) Without Apps
+
+Need to compile multiple PDF documents into one single file on the go but don't want to install bulky, ad-heavy apps from the Play Store or App Store?
+
+Whether you are emailing a set of bank statements to a loan officer or assembling project reports on your phone, doing it in the browser is the fastest way. Here is how to merge PDFs on mobile devices easily.
+
+---
+
+## 1. Why Avoid Installing Mobile PDF Apps?
+
+Most free mobile PDF editors in app stores are loaded with intrusive video ads, track your location, and require creating accounts. More importantly, they upload your documents to their servers.
+
+Using a local, browser-based web application like **PDFFusion** offers:
+- **Instant Use**: No installation required. Just open Safari or Chrome.
+- **Privacy Shield**: File merging runs completely locally in the mobile browser's memory.
+- **Zero Mobile Data Consumption**: Since the files aren't uploaded to a server, it doesn't consume your mobile data plan.
+
+---
+
+## 2. Step-by-Step Mobile Merging Guide
+
+1. Open your mobile browser (Safari on iOS or Chrome on Android) and navigate to the [Merge PDF](/tools/merge-pdf) tool.
+2. Tap the upload zone. It will open your mobile file manager (Files app on iPhone or Files/Downloads on Android).
+3. Select the PDF files you want to combine.
+4. Tap **Process Document**.
+5. Once the success loader completes, tap **Download File** to save the merged PDF directly back to your downloads folder.
+
+By bookmarking the PDFFusion tool, you have a pocket-sized, high-security PDF manager accessible anytime, anywhere!
+    `,
+  },
+  {
+    slug: 'scan-and-compress-documents-iphone',
+    title: 'How to Scan Documents to PDF on iPhone and Compress Instantly',
+    excerpt: 'Use the native iPhone Files app to scan documents, then compress the file size in one click for instant sharing.',
+    date: 'May 23, 2026',
+    readTime: '4 min read',
+    category: 'Guides',
+    content: `
+# How to Scan Documents to PDF on iPhone and Compress Instantly
+
+Many iPhone users do not know that their phone has a built-in, professional-grade document scanner hidden in the default **Files** app. There is no need to download subscription-based scanner apps that add ugly watermarks to your pages.
+
+However, native iPhone scans capture images in high-fidelity, leading to massive PDF sizes (often 5MB to 15MB per scan). Here is how to scan documents on your iPhone and compress them immediately for quick sharing on WhatsApp or email.
+
+---
+
+## 1. How to Scan Documents Using the Native iPhone App
+
+1. Open the **Files** app on your iPhone.
+2. Tap the three dots (More icon) in the top-right corner.
+3. Select **Scan Documents**.
+4. Position your camera over the document. The iPhone will automatically detect the borders and capture the page.
+5. Tap **Save** to compile the scan into a clean PDF document inside your chosen folder.
+
+---
+
+## 2. Compressing Scanned PDFs to Under 1MB
+
+Since the scan is high-resolution, we need to reduce its weight before sharing:
+1. Open Safari and go to the [Compress PDF](/tools/compress-pdf) tool.
+2. Drag or select your scanned PDF from your Files app.
+3. Choose the **Medium Compression** level (for general sharing) or **Extreme Compression** (if you need the file to be under 1MB).
+4. Tap **Process Document** and download the optimized PDF.
+
+This process will compress the heavy image layers captured by the iPhone camera, making your files lightweight and easy to share while keeping all text razor-sharp.
+    `,
+  },
 ];
+
