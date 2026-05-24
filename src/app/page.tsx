@@ -70,7 +70,7 @@ export default function Home() {
     },
     {
       q: 'Is there a file upload or size limit?',
-      a: 'Free plan users can upload up to 5 files or 10MB total. If you need to process large scanned books or large collections of image files, our Pro Plan (₹99/month) lifts all size limits up to 250MB and allows batch conversions.',
+      a: 'Free plan users can upload up to 50 files or 100MB total (previously 5 files / 10MB). If you need to process extremely large scanned books or massive collections of files, our Pro Plan (₹99/month) lifts size limits up to 250MB and allows batch conversions.',
     },
     {
       q: 'Do I need an internet connection to run this?',

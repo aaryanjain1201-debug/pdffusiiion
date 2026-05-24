@@ -45,6 +45,30 @@ export default function RootLayout({
       lang="en"
       className="h-full antialiased dark"
     >
+      <head>
+        {/* Inject Brand and Founder Organization Schema to associate site with Arihant Jain on search engines */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "PDFFusion",
+              "url": "https://pdffusiiion.vercel.app",
+              "logo": "https://pdffusiiion.vercel.app/favicon.ico",
+              "founder": {
+                "@type": "Person",
+                "name": "Arihant Jain",
+                "jobTitle": "Founder & Developer",
+                "url": "https://pdffusiiion.vercel.app"
+              },
+              "sameAs": [
+                "https://github.com/aaryanjain1201-debug/pdffusiiion"
+              ]
+            })
+          }}
+        />
+      </head>
       <body className="min-h-full flex flex-col bg-background text-foreground bg-grid-pattern antialiased">
         <Navbar />
         <main className="flex-1 w-full flex flex-col justify-start relative">
