@@ -3,19 +3,48 @@
 import { useState } from 'react';
 import { Mail, MessageSquare, Send, CheckCircle2 } from 'lucide-react';
 import confetti from 'canvas-confetti';
+import { MONETIZATION_CONFIG } from '@/lib/monetization-config';
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' });
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.name || !form.email || !form.message) return;
 
     setLoading(true);
 
-    // Simulate API request
+    const endpoint = MONETIZATION_CONFIG.contactFormEndpoint;
+    if (endpoint) {
+      try {
+        const response = await fetch(endpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(form),
+        });
+        if (response.ok) {
+          setSuccess(true);
+          setForm({ name: '', email: '', subject: '', message: '' });
+          confetti({
+            particleCount: 50,
+            spread: 40,
+            origin: { y: 0.8 }
+          });
+        } else {
+          alert('Failed to send message. Please try again or email directly.');
+        }
+      } catch (err) {
+        console.error(err);
+        alert('Network error occurred. Please check your connection.');
+      } finally {
+        setLoading(false);
+      }
+      return;
+    }
+
+    // Simulate API request fallback
     setTimeout(() => {
       setLoading(false);
       setSuccess(true);

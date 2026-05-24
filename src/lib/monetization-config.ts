@@ -19,6 +19,10 @@ export const MONETIZATION_CONFIG = {
   // Format: ca-pub-XXXXXXXXXXXXXXXX
   adsenseClientId: process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID || '',
 
+  // 3b. Free Contact Formspree Endpoint to receive emails directly in your inbox
+  // Sign up for free on Formspree (https://formspree.io), create a form, and paste the URL here.
+  contactFormEndpoint: process.env.NEXT_PUBLIC_CONTACT_FORM_ENDPOINT || '',
+
   // 4. Curated Affiliate Programs (Passive Commission Revenue)
   // Replace these URLs with your personal affiliate referral links.
   affiliates: [
