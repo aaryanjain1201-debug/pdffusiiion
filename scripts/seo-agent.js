@@ -154,6 +154,11 @@ async function runAgent() {
     console.log(`${colors.green}✔ blog-data.ts updated!${colors.reset}\n`);
 
     // 5. Run next build to verify everything is compilation-clean
+    if (process.env.SKIP_BUILD === 'true') {
+      console.log(`${colors.green}✔ Skipped npm run build (SKIP_BUILD is set to true).${colors.reset}\n`);
+      return;
+    }
+
     console.log(`🛠 Running 'npm run build' to verify compilation and update dynamic sitemaps...`);
     try {
       execSync('npm run build', { stdio: 'inherit' });

@@ -1,10 +1,9 @@
 import { PDFDocument } from 'pdf-lib';
 import * as pdfjs from 'pdfjs-dist';
 
-// Configure the pdfjs worker using a standard CDN version that matches the installed package.
-// If the version is not available in window, we default to a standard stable version (e.g., 4.0.370 or similar).
-const PDFJS_VERSION = '4.0.370';
-pdfjs.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version || PDFJS_VERSION}/pdf.worker.min.mjs`;
+// Configure the pdfjs worker to serve locally from the public folder.
+// This guarantees offline support and completely bypasses CDN fetching and CORS issues.
+pdfjs.GlobalWorkerOptions.workerSrc = '/pdf.worker.min.mjs';
 
 /**
  * Converts a file to an ArrayBuffer.
